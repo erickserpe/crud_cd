@@ -1,7 +1,7 @@
 <?php
-require 'src/config.php';
-require 'src/Database.php';
-require 'src/Cd.php';
+require '../src/config.php';
+require '../src/Database.php';
+require '../src/Cd.php';
 
 use App\Cd;
 

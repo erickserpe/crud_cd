@@ -28,24 +28,25 @@ $cds = $cdManager->lerTodos();
             </tr>
         </thead>
         <tbody>
-            <?php if (count($cds) > 0): ?>
-                <?php foreach ($cds as $cd): ?>
-                <tr>
-                    <td><?= htmlspecialchars($cd['artista']) ?></td>
-                    <td><?= htmlspecialchars($cd['titulo']) ?></td>
-                    <td><?= htmlspecialchars($cd['ano']) ?></td>
-                    <td>
-                        <a href="/public/editar.php $cd['id'] ?>" class="btn btn-sm btn-warning">Editar</a>
-                        <a href="/public/excluir.php $cd['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza que deseja excluir este CD?');">Excluir</a>
-                    </td>
-                </tr>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <tr>
-                    <td colspan="4" class="text-center">Nenhum CD cadastrado.</td>
-                </tr>
-            <?php endif; ?>
-        </tbody>
+    <?php if (count($cds) > 0): ?>
+        <?php foreach ($cds as $cd): ?>
+        <tr>
+            <td><?= htmlspecialchars($cd['artista']) ?></td>
+            <td><?= htmlspecialchars($cd['titulo']) ?></td>
+            <td><?= htmlspecialchars($cd['ano']) ?></td>
+            <td>
+                <a href="/public/editar.php?id=<?= $cd['id'] ?>" class="btn btn-sm btn-warning">Editar</a>
+                
+                <a href="/public/excluir.php?id=<?= $cd['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza que deseja excluir este CD?');">Excluir</a>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <tr>
+            <td colspan="4" class="text-center">Nenhum CD cadastrado.</td>
+        </tr>
+    <?php endif; ?>
+</tbody>
     </table>
 </div>
 </body>
